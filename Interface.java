@@ -229,10 +229,9 @@ public class Interface {
             data = typeData.substring(1);
         }
         else { // if data has a dot, split up the data into an array and check if th last index is equal to gif, jpg, html
-            String[] parts = typeData.split("\\.", -2);
-            if (parts[1].equals("gif")) type = 7;
-            else if (parts[1].equals("jpg")) type = 6;
-            else if (parts[1].equals("html")) type = 8;
+            if (typeData.endsWith("gif")) type = 7;
+            else if (typeData.endsWith("jpg")) type = 6;
+            else if (typeData.endsWith("html")) type = 8;
             else type = 1; // this means the data is just a definition
             data = typeData;
         }
